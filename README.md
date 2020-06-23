@@ -1,15 +1,15 @@
-IXXAT Automation GmbH - SocketCAN Driver
+# IXXAT Automation GmbH - SocketCAN Driver
 =========================================
 
 
-About SocketCAN Driver
+## About SocketCAN Driver
 ----------------
 The SocketCAN driver allows you to use IXXAT CAN Interfaces within your own
 socketCAN based applications. For further informations on SocketCAN see 
 
 https://www.kernel.org/doc/Documentation/networking/can.txt
 
-System requirements
+## System requirements
 -------------------
 * PC with Linux Kernel 2.6.37 or newer
 * The CAN-FD interfaces need to have at least a Linux Kernel version of 3.19.3
@@ -51,13 +51,13 @@ Note:
   steps in Getting started.
 
 
-Getting started
+## Getting started
 ------------------------------------
 1) Make sure the can-dev module is loaded properly. 
    You can check this with "lsmod | grep can-dev"
    If it is not loaded yet you can do this with 
 
-   "sudo modprobe can-dev"
+   `sudo modprobe can-dev`
 
 2) Because you need to compile the "ixx_pci" kernel module you need to have
    have the source code of your operating kernel installed on your
@@ -68,26 +68,26 @@ Getting started
    An easy way to get a working kernel build environment is to use 
    module-assistant(m-a). You can install it by typing 
 
-   "sudo apt-get install module-assistant". 
+   `sudo apt-get install module-assistant` 
 
    To let module-assistant install the necessary packages for you, you can use
 
-   "sudo module-assistant prepare" 
+   `sudo module-assistant prepare`
 
 
-Compiling the Kernel Module
+## Compiling the Kernel Module
 ---------------------------
 1) After you made sure that the can-dev module is loaded
    and you have a working kernel build environment you 
    need to compile the IXXAT SocketCAN driver. To do this go 
    to the drivers directory and run 
 
-   "make"
+   `make`
 
 2) If this was successfull you can install all the usb and pci kernel modules by
    typing 
 
-   "sudo make install"
+   `sudo make install`
 
    You can check the result with "dmesg". If there are interfaces connected
    you see i.e. 
@@ -98,33 +98,33 @@ Compiling the Kernel Module
    Now the module is ready to use.
 
 
-Using SocketCAN
+## Using SocketCAN
 ------------------------------------
 1) Before you can send and receive data you need to configure 
    the interface. To do this you can use the 'ip' tool. For example if you 
    want to set the bitrate of 1Mbit (1000000 bit) to the can0 interface
    you can do this with
 
-   "sudo ip link set can0 type can bitrate 1000000"
+   `sudo ip link set can0 type can bitrate 1000000`
 
 2) Now the bitrate is set and you can start the interface by typing
 
-   "sudo ip link set can0 up"
+   `sudo ip link set can0 up`
 
 3) After this you can send and receive data on can0. At the beginning you may
    just want to check some small communications. To do this you could use the
    tools from "can-utils". For example you could try to send data with
 
-   "cansend can0 123#112233"
+   `cansend can0 123#112233`
    
    and receive it with 
    
-   "candump can0"
+   `candump can0`
    
    As a prerequisite for this, is a connected and properly configured bus with
    at least two communication partners.
 
-Raspberry Pi
+## Raspberry Pi
 ------------------------------------
 When using a Raspberry Pi with a standard kernel release, there are no kernel
 or header files available.  This will require that the kernel is recompiled 
