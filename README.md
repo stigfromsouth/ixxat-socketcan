@@ -1,16 +1,15 @@
 # IXXAT Automation GmbH - SocketCAN Driver
-=========================================
 
 
 ## About SocketCAN Driver
-----------------
+
 The SocketCAN driver allows you to use IXXAT CAN Interfaces within your own
 socketCAN based applications. For further informations on SocketCAN see 
 
 https://www.kernel.org/doc/Documentation/networking/can.txt
 
 ## System requirements
--------------------
+
 * PC with Linux Kernel 2.6.37 or newer
 * The CAN-FD interfaces need to have at least a Linux Kernel version of 3.19.3
 * IXXAT CAN Interface:
@@ -52,7 +51,7 @@ Note:
 
 
 ## Getting started
-------------------------------------
+
 1) Make sure the can-dev module is loaded properly. 
    You can check this with "lsmod | grep can-dev"
    If it is not loaded yet you can do this with 
@@ -76,7 +75,7 @@ Note:
 
 
 ## Compiling the Kernel Module
----------------------------
+
 1) After you made sure that the can-dev module is loaded
    and you have a working kernel build environment you 
    need to compile the IXXAT SocketCAN driver. To do this go 
@@ -99,7 +98,7 @@ Note:
 
 
 ## Using SocketCAN
-------------------------------------
+
 1) Before you can send and receive data you need to configure 
    the interface. To do this you can use the 'ip' tool. For example if you 
    want to set the bitrate of 1Mbit (1000000 bit) to the can0 interface
@@ -125,7 +124,7 @@ Note:
    at least two communication partners.
 
 ## Raspberry Pi
-------------------------------------
+
 When using a Raspberry Pi with a standard kernel release, there are no kernel
 or header files available.  This will require that the kernel is recompiled 
 and installed on the device manually to allow the SocketCAN to function.  Refer
